@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  // const float touchingDistance = 0.5f;
-  // int bread;
-  //   // Start is called before the first frame update
-    void Start()
-    {
+  public Vector3 finalMove;
 
+
+  //   // Start is called before the first frame update
+    public void Start()
+    {
+      //finalMove = new Vector3();
     }
+
+    public Vector3 getFinalMove(){
+      return finalMove;
+    }
+
+
   //
   //   // Update is called once per frame
     void Update()

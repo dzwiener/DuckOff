@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Duck : MonoBehaviour
+public class Duck : Player
 {
     [SerializeField] Vector3 moveVec;
     [SerializeField] float moveSpeed;

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Human : MonoBehaviour
+public class Human : Player
 {
-    [SerializeField] Vector3 moveVec;
-    [SerializeField] float moveSpeed;
+  [SerializeField] Vector3 moveVec;
+  [SerializeField] float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Human : MonoBehaviour
     void Update()
     {
 
-      Vector3 finalMove = moveSpeed * Time.deltaTime * moveVec;
+      finalMove = moveSpeed * Time.deltaTime * moveVec;
       transform.position = new Vector3
         (
             Mathf.Clamp(transform.position.x + finalMove.x, -6.83f, 6.83f),
