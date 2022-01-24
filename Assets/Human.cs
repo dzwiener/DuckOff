@@ -11,13 +11,19 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-      transform.position += moveSpeed * Time.deltaTime * moveVec;
+
+      Vector3 finalMove = moveSpeed * Time.deltaTime * moveVec;
+      transform.position = new Vector3
+        (
+            Mathf.Clamp(transform.position.x + finalMove.x, -6.83f, 6.83f),
+            Mathf.Clamp(transform.position.y + finalMove.y, -3.5f, 3.5f),
+            0.0f
+        );
     }
 
     void OnMove(InputValue input)
