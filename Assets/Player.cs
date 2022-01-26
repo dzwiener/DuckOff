@@ -4,60 +4,37 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  public Vector3 finalMove;
+  public Vector3 holdPosition;
+  public Vector3 oldHoldPosition;
+  float bread;
 
 
   //   // Start is called before the first frame update
     public void Start()
     {
-      //finalMove = new Vector3();
+      oldHoldPosition = new Vector3(0,-1.2f,0);
     }
 
-    public Vector3 getFinalMove(){
-      return finalMove;
+    public Vector3 getHoldPosition(){
+      return holdPosition;
     }
 
+    public void setHoldPosition(Vector3 moveVec){
+      if (moveVec.x == 0 && moveVec.y == 0){
+        holdPosition = oldHoldPosition;
+      } else {
+        holdPosition = transform.position + (moveVec * 1.2f);
+        oldHoldPosition = holdPosition;
+        Debug.Log(holdPosition);
+      }
+    }
 
-  //
   //   // Update is called once per frame
-    void Update()
-    {
-    }
+    // void Update()
+    // {
+    // }
 
-  //   //after a collision, bounce away from the collision object but with some randomness
-  //   public void bounce(Vector3 position){
-  //     float x = 0.0f;
-  //     float y = 0.0f;
-  //     if (transform.position.x - position.x > 2){
-  //       x = Random.Range(1, 3);
-  //     } else if (transform.position.x - position.x < -2){
-  //       x = Random.Range(-3, -1);
-  //     } else {
-  //       x = Random.Range(-1,1);
-  //     }
-  //     if (transform.position.y - position.y > 2){
-  //       y = Random.Range(1, 3);
-  //     } else if (transform.position.y - position.y < -2){
-  //       y = Random.Range(-3, -1);
-  //     } else {
-  //       y = Random.Range(-1,1);
-  //     }
-  //     transform.position = transform.position + new Vector3(x, y, 0);
-  //   }
-  //
-  //   public Vector3 getPosition(){
-  //     return transform.position;
-  //   }
-  //
-  //   public bool touching(Vector3 position){
-  //     if (Mathf.Abs(transform.position.x - position.x) < touchingDistance && Mathf.Abs(transform.position.y - position.y) < touchingDistance){
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  //
-  //   public void addBread(int quantity){
-  //     bread = bread + quantity;
-  //   }
+     public void addBread(int quantity){
+       bread = bread + quantity;
+     }
 }

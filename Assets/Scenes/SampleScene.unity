@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f788d7c901ea4d84be4f905fe157d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
+  holdPosition: {x: 0, y: 0, z: 0}
   moveVec: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!23 &61336410
@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556645c6d108d435eb80ffd405d69813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdPosition: {x: 0, y: 0, z: 0}
   moveVec: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!23 &268491933
@@ -629,7 +630,7 @@ MonoBehaviour:
   quality: 0
   isReady: 0
   isHeld: 0
-  holder: {fileID: 0}
+  holder: {fileID: 61336408}
 --- !u!135 &269028108
 SphereCollider:
   m_ObjectHideFlags: 0
