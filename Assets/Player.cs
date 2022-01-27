@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
   public Vector3 holdPosition;
   public Vector3 oldHoldPosition;
-  float bread;
+  public float bread;
 
 
   //   // Start is called before the first frame update
@@ -34,7 +34,4 @@ public class Player : MonoBehaviour
     // {
     // }
 
-     public void addBread(int quantity){
-       bread = bread + quantity;
-     }
 }
