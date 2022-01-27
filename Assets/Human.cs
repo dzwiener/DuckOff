@@ -7,11 +7,8 @@ public class Human : Player
 {
   [SerializeField] Vector3 moveVec;
   [SerializeField] float moveSpeed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+  Vector2 inputVec;
+  bool interactPressed;
 
     // Update is called once per frame
     void Update()
@@ -28,8 +25,16 @@ public class Human : Player
 
     void OnMove(InputValue input)
     {
-      Vector2 inputVec = input.Get<Vector2>();
+      inputVec = input.Get<Vector2>();
       moveVec = new Vector3(inputVec.x, inputVec.y, 0);
     }
 
+    void OnInteract(InputValue input)
+    {
+      interactPressed = input.isPressed;
+
+      if(interactPressed){
+        Debug.Log("Human Interacted");
+      }
+    }
 }

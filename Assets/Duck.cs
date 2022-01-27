@@ -7,17 +7,14 @@ public class Duck : Player
 {
     [SerializeField] Vector3 moveVec;
     [SerializeField] float moveSpeed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    Vector2 inputVec;
+    bool interactPressed;
 
     // Update is called once per frame
     void Update()
     {
 
-      Vector3 finalMove = moveSpeed * Time.deltaTime * moveVec;
+      finalMove = moveSpeed * Time.deltaTime * moveVec;
       transform.position = new Vector3
         (
             Mathf.Clamp(transform.position.x + finalMove.x, -6.83f, 6.83f),
@@ -28,8 +25,16 @@ public class Duck : Player
 
     void OnMove(InputValue input)
     {
-      Vector2 inputVec = input.Get<Vector2>();
+      inputVec = input.Get<Vector2>();
       moveVec = new Vector3(inputVec.x, inputVec.y, 0);
     }
 
+    void OnInteract(InputValue input)
+    {
+      interactPressed = input.isPressed;
+
+      if(interactPressed){
+        Debug.Log("Duck Interacted");
+      }
+    }
 }
