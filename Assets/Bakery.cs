@@ -11,7 +11,7 @@ public class Bakery : MonoBehaviour
     public int challengeQuant;
 
     public void createRoundChallenge(){
-      int choice = Mathf.Round(Random.Range(0,5));
+      float choice = Mathf.Round(Random.Range(0,5));
       switch (choice){
         case 0:
           challenge = "white";//normal bread
@@ -34,7 +34,7 @@ public class Bakery : MonoBehaviour
       }
     }
 
-    public void acceptBread(float quantity, float quality = 1f; string type = "white"){
+    public void acceptBread(float quantity, float quality = 1f, string type = "white"){
       if (type == challenge){
         bread = bread + (quantity * quality);
       } else {

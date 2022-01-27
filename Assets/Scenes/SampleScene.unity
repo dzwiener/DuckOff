@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdPosition: {x: 0, y: 0, z: 0}
+  oldHoldPosition: {x: 0, y: 0, z: 0}
+  bread: 0
   moveVec: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!23 &61336410
@@ -418,6 +420,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &115196745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
+      propertyPath: m_Name
+      value: Counter_Oven
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2160f4552c56940b18326be92d1f7436, type: 3}
 --- !u!1 &268491930
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdPosition: {x: 0, y: 0, z: 0}
+  oldHoldPosition: {x: 0, y: 0, z: 0}
+  bread: 0
   moveVec: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!23 &268491933

@@ -8,6 +8,7 @@ public class RoundManager : MonoBehaviour
   public bool isRound;
   Human human;
   Duck duck;
+  Bakery bakery;
     // Start is called before the first frame update
     void Start()
     {
