@@ -10,6 +10,12 @@ public class Duck : Player
     Vector2 inputVec;
     bool interactPressed;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+      base.Start();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +27,9 @@ public class Duck : Player
             Mathf.Clamp(transform.position.y + finalMove.y, -3.5f, 3.5f),
             0.0f
         );
+        setHoldPosition(moveVec);
     }
+
 
     void OnMove(InputValue input)
     {

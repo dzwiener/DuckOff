@@ -13,4 +13,22 @@ public class Ingredient : MonoBehaviour
       isHeld = true;
       holder = player;
     }
+
+    public void drop(){
+      isHeld = false;
+      holder = null;
+    }
+
+    public void follow(){
+      transform.position = holder.getHoldPosition();
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+      if (isHeld){
+        follow();
+      }
+
+    }
 }
