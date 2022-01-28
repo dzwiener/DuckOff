@@ -13,20 +13,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "7b38ad52-ba1f-462b-8dc8-51d297f81a12",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "WASD",
-                    "id": "c66cb6f1-2ef8-45cd-94c9-865444647101",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "WASD",
                     "id": "bd68768c-8980-43e7-9be1-b5d24ef1277f",
@@ -81,6 +79,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "db77d70d-2d80-42ad-ad67-7b89a8f66919",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WASD",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -96,6 +105,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "6cd4ed1d-d0da-4a54-90d3-2b41bb6470bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -155,14 +173,14 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "WASD",
-                    "id": "283fc81e-06f3-4aab-9531-3cdebf0373c4",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "0664cae5-02e0-40ee-80db-8daa7a941b4b",
+                    "path": "<Keyboard>/slash",
                     "interactions": "",
                     "processors": "",
                     "groups": "Arrow keys",
-                    "action": "Move",
-                    "isComposite": true,
+                    "action": "Interact",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]

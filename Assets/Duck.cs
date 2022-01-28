@@ -8,7 +8,6 @@ public class Duck : Player
     [SerializeField] Vector3 moveVec;
     [SerializeField] float moveSpeed;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +27,15 @@ public class Duck : Player
     {
       Vector2 inputVec = input.Get<Vector2>();
       moveVec = new Vector3(inputVec.x, inputVec.y, 0);
+    }
+
+    void OnInteract(InputValue input)
+    {
+      bool interactPressed = input.isPressed;
+
+      if(interactPressed){
+        Debug.Log("Duck Interacted");
+      }
     }
 
 }

@@ -28,4 +28,13 @@ public class Human : Player
       moveVec = new Vector3(inputVec.x, inputVec.y, 0);
     }
 
+    void OnInteract(InputValue input)
+    {
+      bool interactPressed = input.isPressed;
+
+      if(interactPressed){
+        Debug.Log("Human Interacted");
+      }
+    }
+
 }
