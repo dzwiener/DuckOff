@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
       } else {
         holdPosition = transform.position + (moveVec * 1.2f);
         oldHoldPosition = holdPosition;
-        Debug.Log(holdPosition);
+      //  Debug.Log(holdPosition);
       }
     }
 
