@@ -34,7 +34,11 @@ public class Duck : Player
       bool interactPressed = input.isPressed;
 
       if(interactPressed){
-        Debug.Log("Duck Interacted");
+        //raycast in moveVec
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, moveVec, out hit)){
+          Debug.Log("Human Interacted with a " + hit.collider);
+        }
       }
     }
 
