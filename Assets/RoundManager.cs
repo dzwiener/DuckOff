@@ -5,30 +5,36 @@ using UnityEngine;
 public class RoundManager : MonoBehaviour
 {
   public float roundTime;
-  public bool isRound;
   Human human;
   Duck duck;
   Bakery bakery;
+
     // Start is called before the first frame update
     void Start()
     {
-      roundTime = 30f;
+      bakery = GetComponentsInChildren<Bakery>()[0];
+      human = GetComponentsInChildren<Human>()[0];
+      duck = GetComponentsInChildren<Duck>()[0];
+      newRound();
     }
 
     // Update is called once per frame
     void Update()
     {
-      if (isRound){
-        roundTime -= Time.deltaTime;
-      }
+      roundTime -= Time.deltaTime;
       if (roundTime <= 0){
+        bakery.endRound();
         roundEnded();
       }
 
     }
 
+    void newRound(){
+      roundTime = 30f;
+      //other stuff?
+    }
+
     void roundEnded(){
-      isRound = false;
       //pop up a notice
       //show the bread given to the bakery
       //if the bakery didn't get enough, game over and both players lose
@@ -41,9 +47,10 @@ public class RoundManager : MonoBehaviour
       } else if (duck.bread >=100 && duck.bread == human.bread){
         Debug.Log("Seize the means of production, we've done it!");
       } else if (bakery.bread < 0){
-        Debug.Log("You're going to be sleeping in the streets");
+        Debug.Log("You're going to be sleeping in the streets, the bakery is out of business you dingus");
       } else {
         Debug.Log("Another day of work coming up");
+        newRound();
       }
     }
 }

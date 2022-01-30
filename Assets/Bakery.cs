@@ -8,42 +8,21 @@ public class Bakery : MonoBehaviour
 {
     public float bread;
     public string challenge;
-    public int challengeQuant;
 
-    public void createRoundChallenge(){
-      float choice = Mathf.Round(Random.Range(0,5));
-      switch (choice){
-        case 0:
-          challenge = "white";//normal bread
-          break;
-        case 1:
-          challenge = "wheat";//requires more flour
-          break;
-        case 2:
-          challenge = "sourdough";//needs to sit after being mixed for the right amount of time
-          break;
-        case 3:
-          challenge = "wonder";//needs more mixing
-          break;
-        case 4:
-          challenge = "crusty";//needs to be baked longer, smaller window between perfect and burnt
-          break;
-        default:
-          challenge = "white";
-          break;
-      }
+    void Start(){
+      bread = 5f;
     }
 
-    public void acceptBread(float quantity, float quality = 1f, string type = "white"){
-      if (type == challenge){
+
+
+
+    public void acceptBread(float quantity, float quality = 1f){
         bread = bread + (quantity * quality);
-      } else {
-        bread = bread + (quantity/2 * quality);
-      }
     }
 
     public void endRound(){
-      bread = bread - 5;
+      bread = bread - 0.5f;
+      Debug.Log("Bakery bread Remaining: " + bread);
     }
 
 }

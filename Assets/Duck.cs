@@ -44,6 +44,12 @@ public class Duck : Player
       if(interactPressed){
         ScoreUI.setDuckScore(generateScoreStr());
         Debug.Log("Duck Interacted");
+
+        //raycast in moveVec
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, moveVec, out hit)){
+          Debug.Log("Human Interacted with a " + hit.collider);
+        }
       }
     }
 
