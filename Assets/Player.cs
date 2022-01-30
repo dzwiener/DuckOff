@@ -75,11 +75,11 @@ public class Player : MonoBehaviour
     public string generateScoreStr()
     {
       string output = "";
-      output += "wheat: " + wheat + "\n";
-      output += "flour: " + flour + "\n";
-      output += "water: " + water + "\n";
-      output += "dough: " + dough + "\n";
-      output += "bread: " + bread + "\n";
+      output += "Wheat: " + wheat + "\n";
+      output += "Flour: " + flour + "\n";
+      output += "Water: " + water + "\n";
+      output += "Dough: " + dough + "\n";
+      output += "Bread: " + bread + "\n";
       return output;
     }
 
