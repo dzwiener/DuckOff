@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Duck : Player
 {
     [SerializeField] Vector3 moveVec;
     [SerializeField] float moveSpeed;
+    [SerializeField] UIOverlay ScoreUI;
+
+    void Start()
+    {
+      base.Start();
+      ScoreUI.setDuckScore(generateScoreStr());
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +42,7 @@ public class Duck : Player
       bool interactPressed = input.isPressed;
 
       if(interactPressed){
+        ScoreUI.setDuckScore(generateScoreStr());
         Debug.Log("Duck Interacted");
       }
     }

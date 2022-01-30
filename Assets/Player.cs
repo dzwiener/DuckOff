@@ -72,6 +72,17 @@ public class Player : MonoBehaviour
       }
     }
 
+    public string generateScoreStr()
+    {
+      string output = "";
+      output += "wheat: " + wheat + "\n";
+      output += "flour: " + flour + "\n";
+      output += "water: " + water + "\n";
+      output += "dough: " + dough + "\n";
+      output += "bread: " + bread + "\n";
+      return output;
+    }
+
   //   // Update is called once per frame
     // void Update()
     // {
