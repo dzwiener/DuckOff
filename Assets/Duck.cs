@@ -48,7 +48,7 @@ public class Duck : Player
         //raycast in moveVec
         RaycastHit hit;
         if (Physics.Raycast(transform.position, moveVec, out hit)){
-          Debug.Log("Duck Interacted with a " + hit.collider);
+          Debug.Log("Duck Interacted with a " + hit.collider.name);
         }
       }
     }
