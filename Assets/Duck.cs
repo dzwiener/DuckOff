@@ -9,6 +9,7 @@ public class Duck : Player
     [SerializeField] Vector3 moveVec;
     [SerializeField] float moveSpeed;
     [SerializeField] UIOverlay ScoreUI;
+    Vector2 lastDirection;
 
     void Start()
     {
@@ -28,6 +29,11 @@ public class Duck : Player
             0.0f
         );
         setHoldPosition(moveVec);
+        if(!moveVec.Equals(new Vector3(0,0,0))){
+          lastDirection = moveVec;
+        }
+        Ray ray = new Ray(transform.position, lastDirection);
+        Debug.DrawRay(ray.origin, ray.direction, Color.green, 0, false);
     }
 
 
@@ -40,16 +46,14 @@ public class Duck : Player
     void OnInteract(InputValue input)
     {
       bool interactPressed = input.isPressed;
-
       if(interactPressed){
-        ScoreUI.setDuckScore(generateScoreStr());
         Debug.Log("Duck Interacted");
-
         //raycast in moveVec
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, moveVec, out hit)){
-          Debug.Log("Duck Interacted with a " + hit.collider.name);
+        if (Physics.Raycast(transform.position, lastDirection, out hit)){
+          Debug.Log("Duck Interacted with a " + hit.collider);
         }
+        ScoreUI.setHumanScore(generateScoreStr());
       }
     }
 

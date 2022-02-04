@@ -9,6 +9,7 @@ public class Human : Player
   [SerializeField] Vector3 moveVec;
   [SerializeField] float moveSpeed;
   [SerializeField] UIOverlay ScoreUI;
+  Vector2 lastDirection;
 
     void Start()
     {
@@ -28,6 +29,11 @@ public class Human : Player
             0.0f
         );
         setHoldPosition(moveVec);
+        if(!moveVec.Equals(new Vector3(0,0,0))){
+          lastDirection = moveVec;
+        }
+        Ray ray = new Ray(transform.position, lastDirection);
+        Debug.DrawRay(ray.origin, ray.direction, Color.grey, 0, false);
     }
 
     void OnMove(InputValue input)
@@ -41,9 +47,10 @@ public class Human : Player
       bool interactPressed = input.isPressed;
 
       if(interactPressed){
+        Debug.Log("Human Interacted");
         //raycast in moveVec
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, moveVec, out hit)){
+        if (Physics.Raycast(transform.position, lastDirection, out hit)){
           Debug.Log("Human Interacted with a " + hit.collider);
         }
         ScoreUI.setHumanScore(generateScoreStr());

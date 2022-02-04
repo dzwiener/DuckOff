@@ -8,6 +8,7 @@ public class Ingredient : MonoBehaviour
     public bool isReady;
     public bool isHeld;
     public Player holder;
+    public string name;
 
     public void pickup(Player player){
       isHeld = true;
@@ -30,5 +31,15 @@ public class Ingredient : MonoBehaviour
         follow();
       }
 
+    }
+
+    public string getName()
+    {
+      if(name != null){
+        return name;
+      } else {
+        Debug.Log("Name has not been assigned for an object");
+        return "";
+      }
     }
 }
